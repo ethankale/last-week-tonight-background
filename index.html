@@ -1,60 +1,33 @@
-<!DOCTYPE html>
-<html>
+---
+layout: default
+title: Home
+---
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Last Week Tonight Background : Learn more about topics John Oliver covered on Last Week Tonight.">
+<div class="posts">
+  {% for post in paginator.posts %}
+  <article class="post">
+    <h1 class="post-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
 
-    <title>Last Week Tonight Background</title>
-  </head>
+    {{ post.content }}
+  </article>
+  {% endfor %}
+</div>
 
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ethankale/last-week-tonight-background">View on GitHub</a>
-
-          <h1 id="project_title">Last Week Tonight Background</h1>
-          <h2 id="project_tagline">Learn more about topics John Oliver covered on Last Week Tonight.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ethankale/last-week-tonight-background/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ethankale/last-week-tonight-background/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h2>
-<a id="last-week-tonight---get-digging" class="anchor" href="#last-week-tonight---get-digging" aria-hidden="true"><span class="octicon octicon-link"></span></a>Last Week Tonight - Get Digging!</h2>
-
-<p>John Oliver talks about all kinds of crazy stuff on Last Week Tonight (here on in, LWT, cause I'm lazy).  Do you find yourself wishing there was a list of references, so you could start digging into this stuff yourself?  Well, you're a little weird, but you're in the right spot.</p>
-
-<h2>
-<a id="2015-05-03---standardized-testing" class="anchor" href="#2015-05-03---standardized-testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>2015-05-03 - Standardized Testing</h2>
-
-<ul>
-<li>
-</li>
-</ul>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Last Week Tonight Background maintained by <a href="https://github.com/ethankale">ethankale</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
-</html>
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
