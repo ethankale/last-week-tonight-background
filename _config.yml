@@ -5,17 +5,17 @@ highligher:         true
 permalink:        pretty
 
 # Setup
-title:            Poole
-tagline:          The Jekyll Butler
-url:              http://getpoole.com
+title:            Last Week Tonight Background
+tagline:          LWTB - Dig Deeper
+url:              http://ethankale.github.io/last-week-tonight-background/
 paginate:         1
 baseurl:          http://ethankale.github.io/last-week-tonight-background/
 author:
-  name:           Mark Otto
-  url:            https://twitter.com/mdo
-  email:          markdotto@gmail.com
+  name:           Nat Kale
+  url:            https://github.com/ethankale
+  email:          nathaniel.kale+lwtb@gmail.com
 
 # Custom vars
 version:          1.0.0
 github:
-  repo:           https://github.com/poole/poole
+  repo:           https://github.com/ethankale/last-week-tonight-background
