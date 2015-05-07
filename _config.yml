@@ -5,10 +5,10 @@ highligher:         true
 permalink:        pretty
 
 # Setup
-title:            Last Week Tonight Background
+title:            Last Week Tonight Companion
 tagline:          LWTB - Dig Deeper
 url:              http://ethankale.github.io/last-week-tonight-background/
-paginate:         1
+paginate:         5
 baseurl:          http://ethankale.github.io/last-week-tonight-background/
 author:
   name:           Nat Kale
